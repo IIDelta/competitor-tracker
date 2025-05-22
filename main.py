@@ -6,6 +6,7 @@ from data_processor import format_study_data
 import tkinter as tk
 from tkinter import simpledialog
 
+
 def get_company_names():
     root = tk.Tk()
     root.withdraw()  # Hide the main window
@@ -15,6 +16,7 @@ def get_company_names():
         return companies
     return []
 
+
 def main():
     companies = get_company_names()
     output_file_path = select_output_file_path()
@@ -23,6 +25,7 @@ def main():
         formatted_data = format_study_data(response)
         print(f"Data to be written for {company}: {formatted_data}")  # Debugging information
         write_studies_to_excel(output_file_path, company, formatted_data)
+
 
 if __name__ == "__main__":
     main()
